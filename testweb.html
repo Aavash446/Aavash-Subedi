@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aavash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #f0f6fc;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: var(--muted);
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 700px;
+      padding: 40px 20px;
+      animation: fadeIn 1.8s ease-in-out;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>I'm Aavash</h1>
+    <h2>Builder • Advocate • Curious Human</h2>
+    <nav>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      <a href="mailto:you@example.com">Email</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm Aavash — I build things, lead with purpose, and advocate for change. Whether it's coding, campaigning, or creating, I care about impact.
+        I’ve worked on science advocacy, youth leadership, digital education, and accessibility rights. This space is a small slice of who I am.
+      </p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Special Consideration Campaign</strong> – National advocacy effort for education equity in Nepal</li>
+        <li><strong>Lead Poisoning Research</strong> – Presented at National Youth Science Conference</li>
+        <li><strong>Diverse Ability Empowerment</strong> – Ongoing work for disability inclusion & accessibility</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Aavash. Built with raw HTML/CSS.
+  </footer>
+
+</body>
+</html>
