@@ -1,236 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aavash Subedi – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&family=Caveat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aavash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FAF8F5;
-      --text: #1A1A1A;
-      --text-secondary: #6E6E6E;
-      --accent-red: #D72638;
-      --accent-blue: #1C77C3;
-      --hover-gold: #FFD700;
-      --hover-green: #A0E8AF;
-      --grain: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      --bg: #0d1117;
+      --text: #f0f6fc;
+      --muted: #8b949e;
+      --accent: #58a6ff;
     }
 
-    html, body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background-color: var(--bg);
       color: var(--text);
-      background-image: var(--grain);
-      background-blend-mode: multiply;
-      background-repeat: repeat;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 1000;
+      padding: 80px 20px 40px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin: 0;
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: var(--muted);
+      font-size: 1.3rem;
+      font-weight: 400;
     }
 
     nav {
-      display: flex;
-      gap: 1.5rem;
-      text-transform: lowercase;
+      margin-top: 20px;
     }
 
     nav a {
+      margin: 0 12px;
+      color: var(--accent);
       text-decoration: none;
-      color: var(--text);
-      position: relative;
       font-weight: 600;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: var(--accent-blue);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-      transform-origin: right;
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
-      background: var(--accent-blue);
-      color: #fff;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 4px;
+    main {
+      max-width: 700px;
+      padding: 40px 20px;
+      animation: fadeIn 1.8s ease-in-out;
     }
 
     section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-      background: var(--bg);
-    }
-
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      line-height: 1.1;
-      animation: typewriter 3s steps(40) 1s 1 normal both;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid var(--accent-blue);
-    }
-
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 0;
-      background: rgba(250, 248, 245, 0.8);
-      width: 100%;
-      padding: 1rem;
-      font-weight: bold;
-      font-size: 1rem;
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover .caption {
-      transform: translateY(0);
-    }
-
-    .about-text {
-      line-height: 1.7;
-      font-size: 1.1rem;
-      color: var(--text-secondary);
+      margin-bottom: 60px;
     }
 
     footer {
-      text-align: center;
-      padding: 3rem 1rem;
+      color: var(--muted);
       font-size: 0.9rem;
-      color: var(--text-secondary);
-      border-top: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <button class="toggle" onclick="toggleTheme()">🌗</button>
+
   <header>
-    <h1>Aavash</h1>
+    <h1>I'm Aavash</h1>
+    <h2>Builder • Advocate • Curious Human</h2>
     <nav>
-      <a href="#about">about</a>
-      <a href="#portfolio">portfolio</a>
-      <a href="#contact">contact</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      <a href="mailto:you@example.com">Email</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Hello. I’m Aavash Subedi</h2>
-      <p class="about-text">Education & disability activist. Campaigner. Researcher. I design policy, lead reform, and build what’s missing. </p>
-    </section>
-
-    <section id="portfolio">
-      <h2>Selected Works</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="https://via.placeholder.com/600x400" alt="Lead in Lipstick">
-          <div class="caption">Analyzed 27 cosmetic products for toxic metals. Findings shared with 300,000+ people. Presented at the National Youth Scientists Conference.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://via.placeholder.com/600x400" alt="Special Consideration Bill">
-          <div class="caption">Founded national campaign for emergency board exam policies. Drafted proposal endorsed by Education Minister. Ongoing policy reform work.</div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://via.placeholder.com/600x400" alt="Disability Foundation">
-          <div class="caption">Built a disability foundation from scratch. Now 315+ PwDs served, 95+ volunteers, 16+ programs. Government partnerships & lasting systems change.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p class="about-text">
-        I'm the founder of the Diverse Ability Empowerment Foundation, where we’ve served 315+ people with disabilities in rural Nepal through tailored programs. I led a national policy campaign after being forced to sit board exams while critically ill. I conducted scientific research on lead in cosmetics, raising mass awareness and presenting nationally. I co-lead programs at American Corner Surkhet, and founded Aavash Photography to amplify local stories. I don’t write resumes—I build reform.
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm Aavash — I build things, lead with purpose, and advocate for change. Whether it's coding, campaigning, or creating, I care about impact.
+        I’ve worked on science advocacy, youth leadership, digital education, and accessibility rights. This space is a small slice of who I am.
       </p>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="about-text">Want to collaborate, commission, or connect? Email me: <a href="mailto:aavashsubedi2022@gmail.com">aavashsubedi2022@gmail.com</a><br>
-      Or find me on <a href="https://linkedin.com/in/aavashsubedi" target="_blank">LinkedIn</a></p>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Special Consideration Campaign</strong> – National advocacy effort for education equity in Nepal</li>
+        <li><strong>Lead Poisoning Research</strong> – Presented at National Youth Science Conference</li>
+        <li><strong>Diverse Ability Empowerment</strong> – Ongoing work for disability inclusion & accessibility</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>“I don’t wait for permission to fix what’s broken.” – Aavash</p>
+    &copy; 2025 Aavash. Built with raw HTML/CSS.
   </footer>
 
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme');
-      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    }
-  </script>
 </body>
 </html>
