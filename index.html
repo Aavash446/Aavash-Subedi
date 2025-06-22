@@ -114,23 +114,30 @@
       background: var(--bg);
     }
 
-        .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      line-height: 1.1;
-      animation: typewriter 3s steps(40) 1s 1 normal both;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid var(--accent-blue);
-      width: 23ch;           /* 23 characters for "Hello. I’m Aavash Subedi" */
-      display: inline-block; /* Ensures width and animation work together */
-      max-width: 100%;       /* Prevents overflow on small screens */
-    }
+ .hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  animation:
+    typewriter 3s steps(23) 1s 1 normal both,
+    caret-blink 0.7s steps(1) infinite 4s;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--accent-blue);
+  width: 23ch;
+  display: inline-block;
+  max-width: 100%;
+}
 
-    @keyframes typewriter {
-      from { width: 0; }
-      to { width: 23ch; }   /* Match the width above */
-    }
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 23ch; }
+}
+
+@keyframes caret-blink {
+  0%, 100% { border-right-color: var(--accent-blue); }
+  50% { border-right-color: transparent; }
+}
 
     .gallery {
       display: grid;
