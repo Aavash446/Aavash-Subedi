@@ -114,13 +114,13 @@
       background: var(--bg);
     }
 
- .hero h2 {
+.hero h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   line-height: 1.1;
   animation:
     typewriter 3s steps(23) 1s 1 normal both,
-    caret-blink 0.7s steps(1) infinite 4s;
+    caret-hide 0.1s 4s forwards;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--accent-blue);
@@ -133,12 +133,10 @@
   from { width: 0; }
   to { width: 23ch; }
 }
-
-@keyframes caret-blink {
-  0%, 100% { border-right-color: var(--accent-blue); }
-  50% { border-right-color: transparent; }
+@keyframes caret-hide {
+  to { border-right-color: transparent; }
 }
-
+    
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
